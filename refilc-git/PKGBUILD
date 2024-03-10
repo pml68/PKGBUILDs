@@ -20,15 +20,22 @@ sha256sums=(
   'SKIP'
 )
 
-package() {
+prepare() {
   cd "$srcdir/naplo"
   git submodule init
   git submodule set-url filcnaplo_premium "$srcdir/naplo-plus"
   git -c protocol.file.allow=always submodule update
+}
+
+build() {
+  cd "$srcdir/naplo"
   bash fix-pub.sh
   cd filcnaplo
   flutter create --platforms=linux .
   flutter build linux --release --dart-define=APPVER=$(cat pubspec.yaml | grep "version:" | cut -d' ' -f2 | cut -d+ -f1)
+}
+
+package() {
   mkdir -p $pkgdir/usr/bin
   install -Dm755 "$srcdir/naplo/filcnaplo/build/linux/x64/release/bundle/filcnaplo" "$pkgdir/usr/bin"
   cp -rf "$srcdir/naplo/filcnaplo/build/linux/x64/release/bundle/lib" "$pkgdir/usr/bin"
