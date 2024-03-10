@@ -26,11 +26,11 @@ package() {
   git submodule set-url filcnaplo_premium "$srcdir/naplo-plus"
   git -c protocol.file.allow=always submodule update
   bash fix-pub.sh
-	cd filcnaplo
-	flutter create --platforms=linux .
-	flutter build linux --release --dart-define=APPVER=$(cat pubspec.yaml | grep "version:" | cut -d' ' -f2 | cut -d+ -f1)
+  cd filcnaplo
+  flutter create --platforms=linux .
+  flutter build linux --release --dart-define=APPVER=$(cat pubspec.yaml | grep "version:" | cut -d' ' -f2 | cut -d+ -f1)
   mkdir -p $pkgdir/usr/bin
-	install -Dm755 "$srcdir/naplo/filcnaplo/build/linux/x64/release/bundle/filcnaplo" "$pkgdir/usr/bin"
-	cp -rf "$srcdir/naplo/filcnaplo/build/linux/x64/release/bundle/lib" "$pkgdir/usr/bin"
-	cp -rf "$srcdir/naplo/filcnaplo/build/linux/x64/release/bundle/data" "$pkgdir/usr/bin"
+  install -Dm755 "$srcdir/naplo/filcnaplo/build/linux/x64/release/bundle/filcnaplo" "$pkgdir/usr/bin"
+  cp -rf "$srcdir/naplo/filcnaplo/build/linux/x64/release/bundle/lib" "$pkgdir/usr/bin"
+  cp -rf "$srcdir/naplo/filcnaplo/build/linux/x64/release/bundle/data" "$pkgdir/usr/bin"
 }
