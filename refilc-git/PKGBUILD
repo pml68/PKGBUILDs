@@ -9,7 +9,6 @@ license=('AGPL-3.0')
 makedepends=(
   'flutter'
   'git'
-  'unzip'
 )
 source=(
   "git+https://github.com/pml68/naplo.git"
