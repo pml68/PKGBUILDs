@@ -14,10 +14,8 @@ makedepends=(
 source=(
   "git+https://github.com/pml68/naplo.git"
   "git+https://github.com/pml68/naplo-plus.git"
-  "Makefile"
 )
 sha256sums=(
-  'SKIP'
   'SKIP'
   'SKIP'
 )
