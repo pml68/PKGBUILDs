@@ -8,15 +8,8 @@ options=(!debug strip)
 license=('AGPL-3.0')
 provides=('refilc')
 conflicts=('refilc')
-makedepends=(
-  'git'
-)
-source=(
-  "https://github.com/pml68/naplo/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz"
-)
-sha256sums=(
-  'SKIP'
-)
+source=("https://github.com/pml68/naplo/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz")
+sha256sums=('SKIP')
 
 package() {
   mkdir -p $pkgdir/usr/bin
