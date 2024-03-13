@@ -6,6 +6,8 @@ arch=('x86_64')
 url="https://github.com/refilc/naplo"
 options=(!debug strip)
 license=('AGPL-3.0')
+provides=('refilc')
+conflicts=('refilc')
 makedepends=(
   'git'
 )
@@ -18,7 +20,7 @@ sha256sums=(
 
 package() {
   mkdir -p $pkgdir/usr/bin
-  install -Dm755 "$srcdir/filcnaplo" "$pkgdir/usr/bin"
+  install -Dm755 "$srcdir/filcnaplo" "$pkgdir/usr/bin/refilc"
   cp -rf "$srcdir/lib" "$pkgdir/usr/bin"
   cp -rf "$srcdir/data" "$pkgdir/usr/bin"
 }
