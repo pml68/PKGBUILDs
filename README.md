@@ -1,3 +1,3 @@
-# PKGBUILDs
+# refilc
 
-My custom PKGBUILDs
+PKGBUILD for installing reFilc (pre-built binary)
