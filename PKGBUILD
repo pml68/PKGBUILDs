@@ -1,6 +1,6 @@
 pkgname=refilc
 pkgver=4.5.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Nem hivatalos e-napló alkalmazás az e-KRÉTA rendszerhez - tanulóktól, tanulóknak."
 arch=('x86_64')
 url="https://github.com/refilc/naplo"
