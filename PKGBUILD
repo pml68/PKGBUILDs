@@ -16,5 +16,5 @@ package() {
   install -Dm755 "$srcdir/filcnaplo" "$pkgdir/opt/refilc/refilc"
   cp -rf "$srcdir/lib" "$pkgdir/opt/refilc"
   cp -rf "$srcdir/data" "$pkgdir/opt/refilc"
-  sudo ln -s /opt/refilc/refilc /usr/bin/refilc
+  [[ -h "/usr/bin/refilc" ]] || ln -s /opt/refilc/refilc /usr/bin/refilc
 }
