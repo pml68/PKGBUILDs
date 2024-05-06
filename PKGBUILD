@@ -12,8 +12,9 @@ source=("https://github.com/pml68/naplo/releases/download/v$pkgver/$pkgname-$pkg
 sha256sums=('SKIP')
 
 package() {
-  mkdir -p $pkgdir/usr/bin
-  install -Dm755 "$srcdir/filcnaplo" "$pkgdir/usr/bin/refilc"
-  cp -rf "$srcdir/lib" "$pkgdir/usr/bin"
-  cp -rf "$srcdir/data" "$pkgdir/usr/bin"
+  mkdir -p $pkgdir/opt/refilc
+  install -Dm755 "$srcdir/filcnaplo" "$pkgdir/opt/refilc/refilc"
+  cp -rf "$srcdir/lib" "$pkgdir/opt/refilc"
+  cp -rf "$srcdir/data" "$pkgdir/opt/refilc"
+  sudo ln -s /opt/refilc/refilc /usr/bin/refilc
 }
